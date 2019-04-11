@@ -1,0 +1,14 @@
+.logo {
+    animation-name: App-logo-spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
