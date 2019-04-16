@@ -37,13 +37,13 @@ export default class Header extends Component {
                         <Typography className="pointer" variant="h6" color="inherit"><a href="/">Главная</a></Typography>
                     </Grid>
                     <Grid style={{padding:20}} item>
-                        <Typography className="pointer" variant="h6" color="inherit"><a href="accessories">Акксессуры</a></Typography>
+                        <Typography className="pointer" variant="h6" color="inherit"><a href="/accessories">Акксессуры</a></Typography>
                     </Grid>
                     <Grid style={{padding:20}} item>
-                        <Typography className="pointer" variant="h6" color="inherit"><a href="delivery">О доставке</a></Typography>
+                        <Typography className="pointer" variant="h6" color="inherit"><a href="/delivery">О доставке</a></Typography>
                     </Grid>
                     <Grid style={{padding:20}} item>
-                        <Typography className="pointer" variant="h6" color="inherit"><a href="about">О нас</a></Typography>
+                        <Typography className="pointer" variant="h6" color="inherit"><a href="/about">О нас</a></Typography>
                     </Grid>
                 </Grid>
                 </Toolbar>
