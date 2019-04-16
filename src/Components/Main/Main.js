@@ -23,7 +23,7 @@ export default class Header extends Component {
                 <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
                     <Card>
                         <CardActionArea>
-                            <CardMedia style={{height:"140px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg"/>
+                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg"/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
                                 <Typography component="p">DESCRIPTION</Typography>
@@ -34,7 +34,7 @@ export default class Header extends Component {
                 <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
                     <Card>
                         <CardActionArea>
-                            <CardMedia style={{height:"140px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
+                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
                                 <Typography component="p">DESCRIPTION</Typography>
@@ -45,7 +45,7 @@ export default class Header extends Component {
                 <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
                     <Card>
                         <CardActionArea>
-                            <CardMedia style={{height:"140px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
+                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
                                 <Typography component="p">DESCRIPTION</Typography>
@@ -56,7 +56,7 @@ export default class Header extends Component {
                 <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
                     <Card>
                         <CardActionArea>
-                            <CardMedia style={{height:"140px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
+                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
                                 <Typography component="p">DESCRIPTION</Typography>
@@ -67,7 +67,7 @@ export default class Header extends Component {
                 <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
                     <Card>
                         <CardActionArea>
-                            <CardMedia style={{height:"140px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
+                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
                                 <Typography component="p">DESCRIPTION</Typography>
@@ -78,7 +78,7 @@ export default class Header extends Component {
                 <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
                     <Card>
                         <CardActionArea>
-                            <CardMedia style={{height:"140px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
+                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
                                 <Typography component="p">DESCRIPTION</Typography>
@@ -89,7 +89,7 @@ export default class Header extends Component {
                 <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
                     <Card>
                         <CardActionArea>
-                            <CardMedia style={{height:"140px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
+                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
                                 <Typography component="p">DESCRIPTION</Typography>
@@ -100,7 +100,7 @@ export default class Header extends Component {
                 <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
                     <Card>
                         <CardActionArea>
-                            <CardMedia style={{height:"140px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
+                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
                                 <Typography component="p">DESCRIPTION</Typography>
@@ -111,7 +111,7 @@ export default class Header extends Component {
                 <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
                     <Card>
                         <CardActionArea>
-                            <CardMedia style={{height:"140px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
+                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
                                 <Typography component="p">DESCRIPTION</Typography>
