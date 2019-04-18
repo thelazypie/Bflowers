@@ -18,6 +18,7 @@ class App extends Component {
               {/* <Main/> */}
               <Route exact path='/' component={Main}/>
               <Route exact path='/delivery' component={Delivery}/>
+              <Route exact component={Main}/>
               {/* <Delivery/> */}
             <Footer/>
           </div>
