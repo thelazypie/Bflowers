@@ -27,7 +27,6 @@ class About extends Component {
                 </FormControl>
 
             </Grid>
-          
           </div>
     );
   }

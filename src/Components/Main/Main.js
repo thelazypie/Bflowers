@@ -10,7 +10,22 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 // import GridListTileBar from '@material-ui/core/GridListTileBar';
 // import Button from '@material-ui/core/Button';
 
+import axios from 'axios'
+
 export default class Header extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {data: []};
+    }
+
+    componentDidMount() {
+        axios.get('/getProducts')
+        .then(response => {
+            let data = JSON.parse(response.request.response)
+            this.setState({data: data.data.products});
+        }); //{data:response.request.response
+      }
     render() {
         return(
             <div>
@@ -20,105 +35,23 @@ export default class Header extends Component {
                 </Typography>
             </Grid>
             <Grid container>
-                <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg"/>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
-                                <Typography component="p">DESCRIPTION</Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-                <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
-                                <Typography component="p">DESCRIPTION</Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-                <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
-                                <Typography component="p">DESCRIPTION</Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-                <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
-                                <Typography component="p">DESCRIPTION</Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-                <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
-                                <Typography component="p">DESCRIPTION</Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-                <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
-                                <Typography component="p">DESCRIPTION</Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-                <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
-                                <Typography component="p">DESCRIPTION</Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-                <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
-                                <Typography component="p">DESCRIPTION</Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
-                <Grid style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
-                    <Card>
-                        <CardActionArea>
-                            <CardMedia style={{height:"200px"}} image="https://pp.userapi.com/c851220/v851220861/f7b7c/I9VHS3cKHnk.jpg" title="flower"/>
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">Flower</Typography>
-                                <Typography component="p">DESCRIPTION</Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
-                </Grid>
+                    {
+                        this.state.data.map((chunk,index)=>{
+                            return(
+                                <Grid key={index} style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
+                                <Card>
+                                    <CardActionArea>
+                                        <CardMedia style={{height:"200px"}} image={chunk.link}/>
+                                        <CardContent>
+                                            <Typography gutterBottom variant="h5" component="h2">{chunk.name}</Typography>
+                                            <Typography component="p">{chunk.description}</Typography>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
+                                </Grid>
+                            )
+                        })
+                    }
             </Grid>
             </div>
         )

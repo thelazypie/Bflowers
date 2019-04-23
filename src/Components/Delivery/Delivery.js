@@ -15,7 +15,8 @@ export default class Delivery extends Component {
                     О доставке
                 </Typography>
                 <Grid container alignContent="center">
-                <Card style={{width:"500px", margin:"1em"}} className="delivery-item">
+                    <Grid item lg md sm xs>
+                    <Card style={{width:"500px", margin:"1em"}} className="delivery-item">
                     <CardContent>
                         <Typography align='center' variant="h5" component="h2">
                             Доставка производится на территории Росии.
@@ -23,20 +24,25 @@ export default class Delivery extends Component {
                         </Typography>
                     </CardContent>
                     </Card>
-                <Card style={{width:"500px", margin:"1em"}} className="delivery-item">
+                    </Grid>
+                    <Grid item lg md sm xs>
+                    <Card style={{width:"500px", margin:"1em"}} className="delivery-item">
+                        <CardContent>
+                            <Typography align='center' variant="h5" component="h2">
+                                При повреждении товара ВО ВРЕМЯ ДОСТАВКИ(при в вскрытии на почте) будет возвращена полная сумма стоимости товара.
+                            </Typography>
+                        </CardContent> 
+                    </Card>
+                    </Grid>
+                    <Grid item lg md sm xs>
+                    <Card style={{width:"500px", margin:"1em"}} className="delivery-item">
                     <CardContent>
                         <Typography align='center' variant="h5" component="h2">
-                            При повреждении товара ВО ВРЕМЯ ДОСТАВКИ(при в вскрытии на почте) будет возвращена полная сумма стоимости товара.
+                            Простое и быстрое отслеживание.
                         </Typography>
                     </CardContent> 
-                </Card>
-                <Card style={{width:"500px", margin:"1em"}} className="delivery-item">
-                    <CardContent>
-                        <Typography align='center' variant="h5" component="h2">
-                            Простое и быстрое отслеживание
-                        </Typography>
-                    </CardContent> 
-                </Card>
+                    </Card>
+                    </Grid>
                 </Grid>
             </div>
         )

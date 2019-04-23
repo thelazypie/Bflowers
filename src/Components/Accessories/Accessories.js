@@ -25,9 +25,6 @@ class Accessories extends Component {
     }); //{data:response.request.response
   }
 
-  makeData() {
-      return JSON.parse(this.state.data);
-  }
 
   render() {
     return (

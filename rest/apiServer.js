@@ -9,6 +9,11 @@ REST.get('/getAccessories', (req,res)=>{
     res.send({data:data});
 });
 
+REST.get('/getProducts', (req,res)=>{
+    const data = JSON.parse(fs.readFileSync('./apiServerData/products.json'));
+    res.send({data:data});
+});
+
 REST.use(express.static('./apiServerData/staticData'));
 
 REST.listen(1337,()=>console.log('work..'));
