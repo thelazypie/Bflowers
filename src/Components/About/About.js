@@ -7,7 +7,11 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 
-class App extends Component {
+class About extends Component {
+
+  send() {
+
+  }
   render() {
     return (
           <div className="About">
@@ -29,4 +33,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default About;
