@@ -38,7 +38,7 @@ export default class Delivery extends Component {
                     <Card style={{width:"500px"}} className="delivery-item">
                     <CardContent>
                         <Typography align='center' variant="h5" component="h2">
-                            Простое и быстрое отслеживание для вашего счастья и удобства. А также для нашего спокойства за ваш товар.
+                            Простое и быстрое отслеживание для вашего счастья и удобства, а также для нашего спокойства за ваш товар.
                         </Typography>
                     </CardContent> 
                     </Card>
