@@ -1,5 +1,6 @@
-let express = require('express');
+const express = require('express');
 const fs = require('fs');
+const bodyParser = require('body-parser')
 
 let REST = express();
 
@@ -14,6 +15,12 @@ REST.get('/getProducts', (req,res)=>{
     res.send({data:data});
 });
 
+REST.post('/setNotify', (req,res)=>{
+    // const data = JSON.parse(fs.readFileSync('./apiServerData/products.json'));
+    // res.send({data:data});
+});
+
 REST.use(express.static('./apiServerData/staticData'));
+REST.use(bodyParser.urlencoded({ extended: true }));
 
 REST.listen(1337,()=>console.log('work..'));
