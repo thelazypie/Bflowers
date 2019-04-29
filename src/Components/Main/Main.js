@@ -11,12 +11,28 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 // import Button from '@material-ui/core/Button';
 
 import axios from 'axios'
+import CarouselSlider from "react-carousel-slider"
 
 export default class Header extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {data: []};
+        this.state = {
+            data: [], 
+            sliderData:[{
+                des: "",
+                imgSrc: "/1.jpg"
+            },
+            {
+                des: "",
+                imgSrc: "/2.jpg"
+            },
+            {
+                des: "",
+                imgSrc: "/3.jpg"
+            }
+        ]
+        };
     }
 
     componentDidMount() {
@@ -29,6 +45,7 @@ export default class Header extends Component {
     render() {
         return(
             <div>
+            <CarouselSlider slideItems = {this.state.sliderData} />   
             <Grid container justify="center">
                 <Typography style={{margin:"1em 0em",padding:" 2em 0em", borderBottom: "1px solid #000", borderTop:"1px solid #000"}} variant="title">
                     Мы не просто магазин, мы команда людей, которым нравится выращивать цветы а также делиться ими со всеми.

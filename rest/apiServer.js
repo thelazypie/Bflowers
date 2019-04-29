@@ -15,9 +15,12 @@ REST.get('/getProducts', (req,res)=>{
     res.send({data:data});
 });
 
-REST.post('/setNotify', (req,res)=>{
-    // const data = JSON.parse(fs.readFileSync('./apiServerData/products.json'));
-    // res.send({data:data});
+REST.get('/registerUser', (req,res)=>{
+    const data = JSON.parse(fs.readFileSync('./apiServerData/users.json','utf8'));
+    if(!data.users) {data.users = []};
+    data.users.push(req.query);
+    fs.writeFileSync('./apiServerData/users.json',JSON.stringify(data));
+    res.send('successfully registered');
 });
 
 REST.get('/setQuestion',(req,res)=>{
