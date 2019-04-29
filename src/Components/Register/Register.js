@@ -53,7 +53,7 @@ export default class Register extends Component {
         return(
             <div className="Register">
             <Typography variant="h4" align="center">Регистрация</Typography>
-            <Grid alignItems="center" style={{padding:"0em 4em"}} container alignContent="center">
+            <Grid alignItems="center" style={{padding:"0em 25%"}} container alignContent="center">
                 
                 <FormControl fullWidth>
                     <Input style={{padding:"1em 0em"}} onChange={this.handleChangeN} fullWidth name="name" placeholder="Введите Логин" type="text">Login</Input>  
@@ -63,7 +63,7 @@ export default class Register extends Component {
                     <Button onClick={this.send}>Отправить</Button>
                     <Typography variant="overline">{this.state.someEmpty? "У вас есть пустые поля, мех" : ""}</Typography>                                         
                 </FormControl>
-
+                <Typography variant="headline" align="center">Уже зарегистрированы?<a href="/logIn">Войти</a></Typography>
             </Grid>
           </div>
         )
