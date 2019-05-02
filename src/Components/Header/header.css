@@ -4,6 +4,10 @@
     animation-iteration-count: infinite;
 }
 
+.none {
+  user-select: none;
+}
+
 @keyframes App-logo-spin {
     from {
       transform: rotate(0deg);

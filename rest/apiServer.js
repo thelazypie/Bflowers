@@ -51,7 +51,7 @@ REST.get('/setQuestion',(req,res)=>{
     if(!data.questions) {data.questions = []};
     data.questions.push({
         name: req.query.name,
-        email: req.query.message,
+        email: req.query.email,
         message: req.query.message
     });
     fs.writeFileSync('./apiServerData/questions.json',JSON.stringify(data));

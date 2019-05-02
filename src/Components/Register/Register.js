@@ -32,7 +32,7 @@ export default class Register extends Component {
           this.setState({someEmpty: true});
         } else {
           this.setState({someEmpty: false});
-          axios.get(`/reg?name=${this.state.name}&email=${this.state.email}&password=${this.state.message}&access=user`).then((res)=>console.log(res));
+          axios.get(`/reg?name=${this.state.name}&email=${this.state.email}&password=${this.state.password}&access=user`).then((res)=>console.log(res));
         }
         
       }
