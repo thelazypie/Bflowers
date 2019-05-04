@@ -48,17 +48,17 @@ export default class Header extends Component {
                 
                 <Grid container justify="flex-end" alignItems="center">
                 <Typography className="none" variant="h6" onClick={()=>{this.toggleDrawer(true)}} color="inherit">Ваш город: {this.state.town}</Typography>
-                    <Grid style={{padding:20}} item>
-                        <Typography className="pointer" variant="h6" color="inherit"><a href="/">Главная</a></Typography>
+                    <Grid item>
+                        <Typography style={{padding:20}} className="pointer" variant="h6" color="inherit"><a href="/">Главная</a></Typography>
                     </Grid>
-                    <Grid style={{padding:20}} item>
-                        <Typography className="pointer" variant="h6" color="inherit"><a href="/accessories">Акксессуры</a></Typography>
+                    <Grid item>
+                        <Typography style={{padding:20}} className="pointer" variant="h6" color="inherit"><a href="/accessories">Акксессуры</a></Typography>
                     </Grid>
-                    <Grid style={{padding:20}} item>
-                        <Typography className="pointer" variant="h6" color="inherit"><a href="/delivery">О доставке</a></Typography>
+                    <Grid item>
+                        <Typography style={{padding:20}} className="pointer" variant="h6" color="inherit"><a href="/delivery">О доставке</a></Typography>
                     </Grid>
-                    <Grid style={{padding:20}} item>
-                        <Typography className="pointer" variant="h6" color="inherit"><a href="/about">О нас</a></Typography>
+                    <Grid item>
+                        <Typography style={{padding:20}} className="pointer" variant="h6" color="inherit"><a href="/about">О нас</a></Typography>
                     </Grid>
                 </Grid>
                 </Toolbar>
