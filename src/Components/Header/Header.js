@@ -64,7 +64,7 @@ export default class Header extends Component {
                 </Toolbar>
                 <Drawer anchor="top" open={this.state.driwerOpen} onClose={()=>{this.toggleDrawer(false)}}>
                     <Input fullWidth name="name" onChange={(e)=>{e.preventDefault(); this.setState({townNew: e.target.value})}} placeholder="Не ваш город? введите его!" type="text"/>
-                    <Button onClick={()=>{this.setState({town: this.state.townNew}); this.toggleDrawer(false)}}>OK</Button>
+                    <Button onClick={()=>{this.setState({town: this.state.townNew === ""? this.state.town : this.state.townNew }); this.toggleDrawer(false)}}>OK</Button>
                 </Drawer>
             </AppBar>
         )
