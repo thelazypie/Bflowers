@@ -16,6 +16,7 @@ export default class Register extends Component {
             name: "",
             email:"",
             password: "",
+            someEmpty : false,
         };
         this.send = this.send.bind(this);
         this.handleChangeN = this.handleChangeN.bind(this);
@@ -53,7 +54,7 @@ export default class Register extends Component {
         return(
             <div className="Register">
             <Typography variant="h4" align="center">Регистрация</Typography>
-            <Grid alignItems="center" style={{padding:"0em 25%"}} container alignContent="center">
+            <Grid style={{height:'100%'}} container alignContent="center">
                 
                 <FormControl fullWidth>
                     <Input style={{padding:"1em 0em"}} onChange={this.handleChangeN} fullWidth name="name" placeholder="Введите Логин" type="text">Login</Input>  
