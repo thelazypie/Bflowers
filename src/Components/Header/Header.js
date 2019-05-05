@@ -70,13 +70,13 @@ export default class Header extends Component {
                         <Typography style={{padding:".5em 1em"}} className="pointer" variant="h6" color="inherit"><a href="/about">О нас</a></Typography>
                     </Grid>
                     <Grid item>
-                        <Typography style={{padding:".5em 1em"}} className="pointer" variant="h6" color="inherit"><a href="/entry">Войти</a></Typography>
+                        <Typography style={{padding:".5em 1em"}} className="pointer" variant="h6" color="inherit"><a href="/register">Войти</a></Typography>
                     </Grid>
                 </Grid>
                 </Toolbar>
                 <Drawer anchor="bottom" open={this.state.driwerOpen} onClose={()=>{this.toggleDrawer(false)}}>
                     <Input style={{padding:'1.5em 0em'}} fullWidth name="name" onChange={(e)=>{e.preventDefault(); this.setState({townNew: e.target.value})}} placeholder="Не ваш город? введите его!" type="text"/>
-                    <Button onClick={()=>{this.setState({town: this.state.townNew === ""? this.state.town : this.state.townNew }); this.toggleDrawer(false)}}>OK</Button>
+                    <Button onClick={()=>{this.setState({town: this.state.townNew === ""? this.state.town : this.state.townNew }); this.toggleDrawer(false)}}>Сохранить</Button>
                 </Drawer>
             </AppBar>
         )
