@@ -19,9 +19,11 @@ export default class Header extends Component {
         constructor(props) {
         super(props);
 
-        this.state = {town: "Неизвестно",modalShow: false,driwerOpen:false, townNew: ""};
+        this.state = {town: "Неизвестно",modalShow: false,driwerOpen:false, townNew: "", current:null};
+        console.log(this.state.current);
 
         this.showModal = this.showModal.bind(this)
+        this.setCurrent = this.setCurrent.bind(this)
     }
     componentDidMount() {
         fetch("http://ip-api.com/json")
@@ -37,33 +39,43 @@ export default class Header extends Component {
         e.preventDefault();
         this.setState({modalShow: !this.state.modalShow});
     }
+
+    setCurrent(e) {
+        e.preventDefault();
+        this.setState({current: e.target});
+        console.log(e.target, "target",this.state.current, 'state');
+    }
+        
     render() {
         return(
             <AppBar position="static">
                 <Toolbar>
                 <Grid container justify="flex-start" alignItems="center">
                         <Avatar className="logo" alt="sukkulent" src={logo} />
-                        <Typography variant="title" color="inherit">BotaniCraft</Typography>
+                        <Typography variant="title" color="inherit"><a style={{color:"#fff", textDecoration:"none"}} href="/">BotaniCraft</a></Typography>
                 </Grid>
                 
                 <Grid container justify="flex-end" alignItems="center">
                 <Typography className="none" variant="h6" onClick={()=>{this.toggleDrawer(true)}} color="inherit">Ваш город: {this.state.town}</Typography>
                     <Grid item>
-                        <Typography style={{padding:20}} className="pointer" variant="h6" color="inherit"><a href="/">Главная</a></Typography>
+                        <Typography style={{padding:".5em 1em"}} className="pointer" variant="h6" color="inherit"><a href="/">Главная</a></Typography>
                     </Grid>
                     <Grid item>
-                        <Typography style={{padding:20}} className="pointer" variant="h6" color="inherit"><a href="/accessories">Акксессуры</a></Typography>
+                        <Typography style={{padding:".5em 1em"}} className="pointer" variant="h6" color="inherit"><a href="/accessories">Акксессуры</a></Typography>
                     </Grid>
                     <Grid item>
-                        <Typography style={{padding:20}} className="pointer" variant="h6" color="inherit"><a href="/delivery">О доставке</a></Typography>
+                        <Typography style={{padding:".5em 1em"}} className="pointer" variant="h6" color="inherit"><a href="/delivery">О доставке</a></Typography>
                     </Grid>
                     <Grid item>
-                        <Typography style={{padding:20}} className="pointer" variant="h6" color="inherit"><a href="/about">О нас</a></Typography>
+                        <Typography style={{padding:".5em 1em"}} className="pointer" variant="h6" color="inherit"><a href="/about">О нас</a></Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography style={{padding:".5em 1em"}} className="pointer" variant="h6" color="inherit"><a href="/entry">Войти</a></Typography>
                     </Grid>
                 </Grid>
                 </Toolbar>
-                <Drawer anchor="top" open={this.state.driwerOpen} onClose={()=>{this.toggleDrawer(false)}}>
-                    <Input fullWidth name="name" onChange={(e)=>{e.preventDefault(); this.setState({townNew: e.target.value})}} placeholder="Не ваш город? введите его!" type="text"/>
+                <Drawer anchor="bottom" open={this.state.driwerOpen} onClose={()=>{this.toggleDrawer(false)}}>
+                    <Input style={{padding:'1.5em 0em'}} fullWidth name="name" onChange={(e)=>{e.preventDefault(); this.setState({townNew: e.target.value})}} placeholder="Не ваш город? введите его!" type="text"/>
                     <Button onClick={()=>{this.setState({town: this.state.townNew === ""? this.state.town : this.state.townNew }); this.toggleDrawer(false)}}>OK</Button>
                 </Drawer>
             </AppBar>
