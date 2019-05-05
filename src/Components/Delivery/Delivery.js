@@ -15,8 +15,8 @@ export default class Delivery extends Component {
                     О доставке
                 </Typography>
                 <Grid container alignItems="center" alignContent="center">
-                    <Grid item style={{padding:"1em"}} item lg={4} md={4} sm={12} xs={12}>
-                    <Card style={{width:"500px"}} className="delivery-item">
+                    <Grid style={{padding:"1em"}} item item lg={4} md={4} sm={12} xs={12}>
+                    <Card className="delivery-item">
                     <CardContent>
                         <Typography align='center' variant="h5" component="h2">
                             Доставка производится на территории Росии.
@@ -25,8 +25,8 @@ export default class Delivery extends Component {
                     </CardContent>
                     </Card>
                     </Grid>
-                    <Grid item style={{padding:"1em"}} item lg={4} md={4} sm={12} xs={12}>
-                    <Card style={{width:"500px"}} className="delivery-item">
+                    <Grid style={{padding:"1em"}} item item lg={4} md={4} sm={12} xs={12}>
+                    <Card className="delivery-item">
                         <CardContent>
                             <Typography align='center' variant="h5" component="h2">
                                 При повреждении товара ВО ВРЕМЯ ДОСТАВКИ(при в вскрытии на почте) будет возвращена полная сумма стоимости товара.
@@ -34,8 +34,8 @@ export default class Delivery extends Component {
                         </CardContent> 
                     </Card>
                     </Grid>
-                    <Grid item style={{padding:"1em"}} item lg={4} md={4} sm={12} xs={12}>
-                    <Card style={{width:"500px"}} className="delivery-item">
+                    <Grid style={{padding:"1em"}} item item lg={4} md={4} sm={12} xs={12}>
+                    <Card className="delivery-item">
                     <CardContent>
                         <Typography align='center' variant="h5" component="h2">
                             Простое и быстрое отслеживание для вашего счастья и удобства, а также для нашего спокойства за ваш товар.
