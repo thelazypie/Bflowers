@@ -8,6 +8,7 @@ import Register from './Components/Register/Register'
 import Accessories from './Components/Accessories/Accessories'
 import About from './Components/About/About'
 import Delivery from './Components/Delivery/Delivery'
+import LogIn from './Components/LogIn/LogIn'
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -23,6 +24,7 @@ class App extends Component {
               <Route exact path='/register' component={Register}/>
               <Route exact path='/delivery' component={Delivery}/>
               <Route exact path='/accessories' component={Accessories}/>
+              <Route exact path='/logIn' component={LogIn}/>
               <Route exact path='/about' component={About}/>
               {/* <Route exact component={Main}/> */}
               {/* <Delivery/> */}
