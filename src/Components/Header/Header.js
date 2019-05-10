@@ -45,6 +45,12 @@ export default class Header extends Component {
         this.setState({current: e.target});
         console.log(e.target, "target",this.state.current, 'state');
     }
+    getCookie(name) {
+        var matches = document.cookie.match(new RegExp(
+          "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+      }
         
     render() {
         return(
@@ -70,7 +76,9 @@ export default class Header extends Component {
                         <Typography style={{padding:".5em 1em"}} className="pointer" variant="h6" color="inherit"><a href="/about">О нас</a></Typography>
                     </Grid>
                     <Grid item>
-                        <Typography style={{padding:".5em 1em"}} className="pointer" variant="h6" color="inherit"><a href="/register">Войти</a></Typography>
+                        <Typography style={{padding:".5em 1em"}} className="pointer" variant="h6" color="inherit">
+                            {this.getCookie('user') && this.getCookie('email')? <a src="/me">{this.getCookie('user')}</a> : <a src="/login">Войти</a>}
+                        </Typography>
                     </Grid>
                 </Grid>
                 </Toolbar>

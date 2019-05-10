@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormControl from '@material-ui/core/FormControl';
+import {Redirect} from 'react-router-dom'
 
 import axios from 'axios';
 
@@ -17,6 +18,7 @@ export default class LogIn extends Component {
             email:"",
             password: "",
             someEmpty : false,
+            logged: false
         };
         this.send = this.send.bind(this);
         this.handleChangeN = this.handleChangeN.bind(this);
@@ -24,17 +26,34 @@ export default class LogIn extends Component {
         this.handleChangeP = this.handleChangeP.bind(this);
     }
 
-    send(e) {
+    async send(e) {
         e.preventDefault();
         // this.setState({name: e.target.value});
         // console.log(this.state);
         
-        if(this.state.name.length === 0 || this.state.email.length === 0 || this.state.password.length === 0) {
+        if(this.state.name.length === 0 || this.state.password.length === 0) {
           this.setState({someEmpty: true});
         } else {
           this.setState({someEmpty: false});
           //Дописать
-          //axios.get(`/reg?name=${this.state.name}&email=${this.state.email}&password=${this.state.password}&access=user`).then((res)=>console.log(res));
+          //axios.get(`/login?name=${this.state.name}&password=${this.state.password}`).then((res)=>console.log(res));
+          const data = {
+              "name": this.state.name,
+              "password": this.state.password
+          }
+          
+          await axios.post(`/login`,data)
+            .then((res)=>{
+                console.log(res)
+                document.cookie=`user=${res.data.message.user};path=/;expires=${new Date(new Date().getTime() + 3000 * 1000)}`;
+                document.cookie=`email=${res.data.message.email};path=/;expires=${new Date(new Date().getTime() + 3000 * 1000)}`;
+                this.setState({logged:true});
+                if(this.state.logged) {
+                    return (<Redirect to="/"/>)
+                }
+                
+            });
+
         }
         
       }
@@ -59,7 +78,6 @@ export default class LogIn extends Component {
                 
                 <FormControl fullWidth>
                     <Input style={{padding:"1em 0em"}} onChange={this.handleChangeN} fullWidth name="name" placeholder="Введите Логин" type="text">Login</Input>  
-                    <Input style={{padding:"1em 0em"}} onChange={this.handleChangeE} fullWidth name="email" placeholder="Введите эл. почту" type="email">Email</Input>
                     <Input style={{padding:"1em 0em"}} onChange={this.handleChangeP} fullWidth name="password" placeholder="Введите Пароль" type="password">Passoword</Input>                 
                     
                     <Button onClick={this.send}>Войти</Button>
