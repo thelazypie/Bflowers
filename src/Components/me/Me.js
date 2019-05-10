@@ -31,6 +31,7 @@ export default class Me extends Component {
                             console.log('poka')
                             document.cookie = "user; path=/; expires=" + new Date(0).toUTCString();
                             document.cookie = "email; path=/; expires=" + new Date(0).toUTCString();
+                            document.cookie = "trash; path=/; expires=" + new Date(0).toUTCString();
                         }}>Выйти</Button>
                     </Grid>
                     <Grid item lg={6} md={6} sm={12} xs={12}>
