@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid'
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button'
+import Paper from '@material-ui/core/Paper'
 
 export default class Me extends Component {
     constructor(props) {
@@ -34,6 +35,19 @@ export default class Me extends Component {
                     </Grid>
                     <Grid item lg={6} md={6} sm={12} xs={12}>
                         <Typography variant="h4">Мои заказы:</Typography>
+                        <Grid container>
+                        {
+                            JSON.parse(this.getCookie('trash')).map(el=>{
+                                return(
+                                    <Grid item lg={4} md={4} sm={12} xs={12}>
+                                        <Paper style={{padding: "1em", margin:"1em"}}>
+                                            <Typography variant="title">{el.title}</Typography>
+                                        </Paper>
+                                    </Grid>
+                                )
+                            })
+                        }
+                        </Grid>
                     </Grid>
                 </Grid>
             </div>

@@ -67,19 +67,19 @@ REST.put('/me/add',(req,res)=>{
     if(!data.users) {data.users = []};
     for (let i = 0; i < data.users.length; i++) {
         const element = data.users[i];
-        if(element.name === req.body.user && element.email === req.body.email) {
-           if(!element.trash) element.trash = [];
-           element.trash.push({
-             title: req.body.title,
-             description: req.body.description,
-             link: req.body.link  
-           })
-        } else {
-            res.send({code:'1',message:"user already exist"});
+        if(element.name === req.body.user) {
+            if(!element.trash) element.trash = [];
+            element.trash.push({
+                title: req.body.title,
+                description: req.body.description,
+                link: req.body.link
+            });
+            fs.writeFileSync('./apiServerData/users.json',JSON.stringify(data));
+            res.send({code:'0',message:"successfully putted",trash:element.trash});
+            return;
         }
     }
-    fs.writeFileSync('./apiServerData/users.json',JSON.stringify(data));
-    res.send({code:'0',message:"successfully putted"});
+    
 })
 
 REST.post('/login',(req,res)=>{
@@ -87,7 +87,7 @@ REST.post('/login',(req,res)=>{
     for (let i = 0; i < data.users.length; i++) {
         const element = data.users[i];
         if(req.body.name === element.name && req.body.password === element.password) {
-           res.send({code:"0",message:{user:element.name,email: element.email}});
+           res.send({code:"0",message:{user:element.name,email: element.email, trash: element.trash}});
         }
     } 
 })

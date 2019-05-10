@@ -98,6 +98,9 @@ export default class Header extends Component {
                         title: this.state.modalTitle,
                         link: this.state.modaLink,
                         description: this.state.modalDesc
+                        }).then(res=>{
+                            console.log(res);
+                            document.cookie=`trash=${JSON.stringify(res.data.trash)};path=/;expires=${new Date(new Date().getTime() + 3000 * 1000)}`;
                         })}}>добавить в корзину</Button>
                     <Button variant="contained" onClick={(e)=>{this.setState({modalOpen:false})}}>Закрыть</Button>
                 </div>
