@@ -77,7 +77,7 @@ export default class Header extends Component {
                     </Grid>
                     <Grid item>
                         <Typography style={{padding:".5em 1em"}} className="pointer" variant="h6" color="inherit">
-                            {this.getCookie('user') && this.getCookie('email')? <a src="/me">{this.getCookie('user')}</a> : <a src="/login">Войти</a>}
+                            {this.getCookie('user') && this.getCookie('email')? <a href="/me">{this.getCookie('user')}</a> : <a href="/register">Войти</a>}
                         </Typography>
                     </Grid>
                 </Grid>
