@@ -23,6 +23,7 @@ export default class Header extends Component {
             modalOpen:false,
             modalTitle: '',
             modalDesc: '',
+            modalLink: '',
             sliderData:[{
                 des: "",
                 imgSrc: "/1.jpg"
@@ -38,6 +39,12 @@ export default class Header extends Component {
         ]
         };
     }
+    getCookie(name) {
+        var matches = document.cookie.match(new RegExp(
+          "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+      }
 
     componentDidMount() {
         axios.post('/getProducts')
@@ -64,6 +71,7 @@ export default class Header extends Component {
                                     this.setState({
                                         modalOpen:true,
                                         modalTitle: chunk.name,
+                                        link: chunk.link,
                                         modalDesc: chunk.description
                                     }) 
                                     }}>
@@ -84,7 +92,14 @@ export default class Header extends Component {
                 <div style={{height:"100%",background: '#eee'}}>
                     <Typography align="center" variant="title">{this.state.modalTitle}</Typography>
                     <Typography align="center" variant="body2">{this.state.modalDesc}</Typography>
-                    <Button onClick={(e)=>{this.setState({modalOpen:false})}}>Закрыть</Button>
+                    <Button variant="contained" onClick={(e)=>{axios.put('/me/add',{
+                        user: this.getCookie('user'),
+                        email: this.getCookie('email'),
+                        title: this.state.modalTitle,
+                        link: this.state.modaLink,
+                        description: this.state.modalDesc
+                        })}}>добавить в корзину</Button>
+                    <Button variant="contained" onClick={(e)=>{this.setState({modalOpen:false})}}>Закрыть</Button>
                 </div>
             </Modal>
             </div>

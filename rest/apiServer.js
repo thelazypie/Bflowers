@@ -58,9 +58,30 @@ REST.post('/setQuestion',(req,res)=>{
         message: req.body.message
     });
     fs.writeFileSync('./apiServerData/questions.json',JSON.stringify(data));
-    res.send('successfully added');
+    res.send({code:'0',message:"successfully added"});
 })
-//НИКОГДА ТАК НЕ ДЕЛАТЬ!
+
+REST.put('/me/add',(req,res)=>{
+    // console.log(req.body);
+    const data = JSON.parse(fs.readFileSync('./apiServerData/users.json','utf8'));
+    if(!data.users) {data.users = []};
+    for (let i = 0; i < data.users.length; i++) {
+        const element = data.users[i];
+        if(element.name === req.body.user && element.email === req.body.email) {
+           if(!element.trash) element.trash = [];
+           element.trash.push({
+             title: req.body.title,
+             description: req.body.description,
+             link: req.body.link  
+           })
+        } else {
+            res.send({code:'1',message:"user already exist"});
+        }
+    }
+    fs.writeFileSync('./apiServerData/users.json',JSON.stringify(data));
+    res.send({code:'0',message:"successfully putted"});
+})
+
 REST.post('/login',(req,res)=>{
     const data = JSON.parse(fs.readFileSync('./apiServerData/users.json','utf8'));
     for (let i = 0; i < data.users.length; i++) {
