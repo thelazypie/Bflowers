@@ -8,10 +8,11 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 // import GridList from '@material-ui/core/GridList';
 // import GridListTile from '@material-ui/core/GridListTile'
 // import GridListTileBar from '@material-ui/core/GridListTileBar';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 
 import axios from 'axios'
 import CarouselSlider from "react-carousel-slider"
+import { Modal } from '@material-ui/core';
 
 export default class Header extends Component {
 
@@ -19,6 +20,9 @@ export default class Header extends Component {
         super(props);
         this.state = {
             data: [], 
+            modalOpen:false,
+            modalTitle: '',
+            modalDesc: '',
             sliderData:[{
                 des: "",
                 imgSrc: "/1.jpg"
@@ -56,7 +60,13 @@ export default class Header extends Component {
                         this.state.data.map((chunk,index)=>{
                             return(
                                 <Grid key={index} style={{padding:"2em 2em"}} item lg={4} md={4} sm={12} xs={12}>
-                                <Card>
+                                <Card onClick={(e)=>{ 
+                                    this.setState({
+                                        modalOpen:true,
+                                        modalTitle: chunk.name,
+                                        modalDesc: chunk.description
+                                    }) 
+                                    }}>
                                     <CardActionArea>
                                         <CardMedia style={{height:"200px"}} image={chunk.link}/>
                                         <CardContent>
@@ -70,6 +80,13 @@ export default class Header extends Component {
                         })
                     }
             </Grid>
+            <Modal open={this.state.modalOpen}>
+                <div style={{height:"100%",background: '#eee'}}>
+                    <Typography align="center" variant="title">{this.state.modalTitle}</Typography>
+                    <Typography align="center" variant="body2">{this.state.modalDesc}</Typography>
+                    <Button onClick={(e)=>{this.setState({modalOpen:false})}}>Закрыть</Button>
+                </div>
+            </Modal>
             </div>
         )
     }
