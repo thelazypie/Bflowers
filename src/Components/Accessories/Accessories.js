@@ -40,7 +40,7 @@ class Accessories extends Component {
                             <CardMedia style={{height:"200px"}} image={chunk.link}/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">{chunk.name}</Typography>
-                                <Typography component="p">{chunk.description}</Typography>
+                                <Typography >{chunk.description}</Typography>
                             </CardContent>
                         </CardActionArea>
                     </Card>
