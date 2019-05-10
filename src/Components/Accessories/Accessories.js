@@ -18,7 +18,7 @@ class Accessories extends Component {
     }
 
   componentDidMount() {
-    axios.get('/getAccessories')
+    axios.post('/getAccessories')
     .then(response => {
         let data = JSON.parse(response.request.response)
         this.setState({data: data.data.accessories});

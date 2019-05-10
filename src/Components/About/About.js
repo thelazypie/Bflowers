@@ -38,7 +38,12 @@ class About extends Component {
       this.setState({someEmpty: true});
     } else {
       this.setState({someEmpty: false});
-      axios.get(`/setQuestion?name=${this.state.name}&email=${this.state.email}&message=${this.state.message}`).then((res)=>console.log(res));
+      //axios.get(`?name=${this.state.name}&email=${this.state.email}&message=${this.state.message}`)
+      axios.post('/setQuestion', {
+        name: this.state.name,
+        email: this.state.email,
+        message: this.state.message
+      }).then((res)=>console.log(res));
     }
     
   }

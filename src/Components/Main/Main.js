@@ -40,7 +40,7 @@ export default class Header extends Component {
     }
 
     componentDidMount() {
-        axios.get('/getProducts')
+        axios.post('/getProducts')
         .then(response => {
             let data = JSON.parse(response.request.response)
             this.setState({data: data.data.products});
