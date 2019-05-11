@@ -7,6 +7,12 @@ REST.use(bodyParser.urlencoded({ extended: true }));
 REST.use(bodyParser.json());
 REST.use(express.static('./apiServerData/staticData'));
 
+REST.use(function(req,res) {
+    if (req.method === "GET") {
+        res.sendFile(__dirname + '/apiServerData/staticData/index.html');
+    }
+})
+
 
 REST.post('/getAccessories', (req,res)=>{
     const data = JSON.parse(fs.readFileSync('./apiServerData/accessories.json'));
