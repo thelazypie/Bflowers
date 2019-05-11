@@ -49,10 +49,6 @@ export default class LogIn extends Component {
                 document.cookie=`email=${res.data.message.email};path=/;expires=${new Date(new Date().getTime() + 3000 * 1000)}`;
                 document.cookie=`trash=${JSON.stringify(res.data.message.trash)};path=/;expires=${new Date(new Date().getTime() + 3000 * 1000)}`;
                 this.setState({logged:true});
-                if(this.state.logged) {
-                    return (<Redirect to="/"/>)
-                }
-                
             });
 
         }
@@ -84,6 +80,7 @@ export default class LogIn extends Component {
                     <Button onClick={this.send}>Войти</Button>
                     <Typography variant="overline">{this.state.someEmpty? "У вас есть пустые поля, мех" : ""}</Typography>                                         
                 </FormControl>
+                {this.state.logged? <Redirect to="/" /> : ""}
             </Grid>
           </div>
         )
