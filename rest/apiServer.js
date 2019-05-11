@@ -7,10 +7,8 @@ REST.use(bodyParser.urlencoded({ extended: true }));
 REST.use(bodyParser.json());
 REST.use(express.static('./apiServerData/staticData'));
 
-REST.use(function(req,res) {
-    if (req.method === "GET") {
-        res.sendFile(__dirname + '/apiServerData/staticData/index.html');
-    }
+REST.get('*',function(req,res) {
+    res.sendFile(__dirname + '/apiServerData/staticData/index.html');
 })
 
 
