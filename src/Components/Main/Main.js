@@ -92,7 +92,7 @@ export default class Header extends Component {
                 <div style={{height:"100%",background: '#eee'}}>
                     <Typography align="center" variant="title">{this.state.modalTitle}</Typography>
                     <Typography align="center" variant="body2">{this.state.modalDesc}</Typography>
-                    <Button variant="contained" onClick={(e)=>{axios.put('/me/add',{
+                    {this.getCookie('user')? <Button variant="contained" onClick={(e)=>{axios.put('/me/add',{
                         user: this.getCookie('user'),
                         email: this.getCookie('email'),
                         title: this.state.modalTitle,
@@ -101,7 +101,7 @@ export default class Header extends Component {
                         }).then(res=>{
                             console.log(res);
                             document.cookie=`trash=${JSON.stringify(res.data.trash)};path=/;expires=${new Date(new Date().getTime() + 3000 * 1000)}`;
-                        })}}>добавить в корзину</Button>
+                        })}}>добавить в корзину</Button>: ""}
                     <Button variant="contained" onClick={(e)=>{this.setState({modalOpen:false})}}>Закрыть</Button>
                 </div>
             </Modal>
